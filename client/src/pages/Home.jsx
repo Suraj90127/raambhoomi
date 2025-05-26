@@ -34,26 +34,29 @@ const Home = () => {
       )} */}
 
       {/* Hero Section */}
-      <div className="absolute inset-0 z-10 flex items-center justify-cente">
+      <div className="absolute inset-0 flex items-center justify-center  z-[99999]">
         <div className="flex space-x-2 text-6xl font-bold text-orange-600">
           <motion.span
             initial={{ x: "-100vw" }}
             animate={{ x: 0 }}
-            transition={{ type: "spring", stiffness: 220 }}
+            transition={{ duration: 2, stiffness: 220, delay: 0.2 }}
+            className="text-9xl font-bold text-orange-600"
           >
             R
           </motion.span>
           <motion.span
             initial={{ y: "-100vh" }}
             animate={{ y: 0 }}
-            transition={{ type: "spring", stiffness: 120, delay: 0.2 }}
+            transition={{ duration: 2, stiffness: 120, delay: 0.2 }}
+              className="text-9xl font-bold text-orange-600"
           >
             M
           </motion.span>
           <motion.span
-            initial={{ x: "100vw" }}
+            initial={{ x: "100vw" }}z
             animate={{ x: 0 }}
-            transition={{ type: "spring", stiffness: 120, delay: 0.4 }}
+            transition={{ duration: 2, stiffness: 120, delay: 0.2 }}
+              className="text-9xl font-bold text-orange-600"
           >
             G
           </motion.span>
@@ -63,13 +66,17 @@ const Home = () => {
       {/* Ram Image Animation */}
       {showRamImage && (
         <motion.img
-          src={raamImg}
-          alt="Lord Ram"
-          className="absolute top-1/2 left-1/2 w-48 h-48 z-20 object-contain transform -translate-x-1/2 -translate-y-1/2"
-          initial={{ scale: 0 }}
-          animate={{ scale: [1.2, 1, 1.2, 1] }}
-          transition={{ duration: 2 }}
-        />
+  src={raamImg}
+  alt="Lord Ram"
+  className="absolute top-1/2 left-1/2 w-48 h-48 z-20 object-contain transform -translate-x-1/2 -translate-y-1/2"
+  initial={{ scale: 0.7, opacity: 1 }}
+  animate={{
+    scale: [0.7, 0.8, 0.9, 1, 1, 1, 1, 0.9, 0.8, 0.7, 0],
+    opacity: [0.6, 0.7, 0.8, 1, 1, 1, 1, 0.8, 0.7], // opacity fades smoothly
+  }}
+  transition={{ duration: 5 }}
+/>
+
       )}
     </div>
   );
